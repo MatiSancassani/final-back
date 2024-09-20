@@ -1,9 +1,6 @@
 {
   "name": "final",
   "version": "1.0.0",
-  "engines": {
-    "node": "20.17.0"
-  },
   "main": "app.js",
   "type": "module",
   "scripts": {
