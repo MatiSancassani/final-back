@@ -13,12 +13,19 @@ router.post("/logout", logoutUser);
 
 router.get("/github", passport.authenticate("github", { session: false }));
 router.get("/github/callback", passport.authenticate("github", { session: false }), (req, res) => {
-    const user = req.user
-    console.log(user)
-    // Aquí es donde se maneja el JWT y se devuelve al cliente
-    res.cookie("token", req.user.token, { httpOnly: true, secure: true, sameSite: 'None' });
-    res.redirect(`https://final-front-mva2.onrender.com/pages/products.html?cart_id=${cart_id}`);
+    try {
+        const user = req.user;
+        const { token, user: { cart_id } } = user;
 
+        // Set the token as an HTTP-only cookie
+        res.cookie("token", token, { httpOnly: true, secure: true, sameSite: 'None' });
+
+
+        res.redirect(`https://final-front-mva2.onrender.com/pages/products.html?cart_id=${cart_id}`);
+    } catch (error) {
+        console.error("Error en /github/callback:", error);
+        res.status(500).send("Error en el servidor");
+    }
 });
 
 
