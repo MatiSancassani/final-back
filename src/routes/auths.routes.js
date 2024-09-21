@@ -37,7 +37,7 @@ router.post("/resetPassword", async (req, res) => {
     const { token, newPassword } = req.body;
     const result = await passwordService.resetPassword(token, newPassword);
     if (result.success) {
-        res.send({ message: result.message, redirectUrl: "https://final-front-mva2.onrender.com/index.html" });
+        res.send({ message: result.message, redirectUrl: "https://final-front-mva2.onrender.com" });
 
     } else {
         res.status(400).send(result.message);
