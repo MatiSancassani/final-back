@@ -17,11 +17,8 @@ router.get("/github/callback", passport.authenticate("github", { session: false 
     console.log(user)
     // Aquí es donde se maneja el JWT y se devuelve al cliente
     res.cookie("token", req.user.token, { httpOnly: true, secure: true, sameSite: 'None' });
-<<<<<<< HEAD
     res.redirect(`https://final-front-mva2.onrender.com/pages/products.html`);
-=======
-    res.redirect(`http://127.0.0.1:5500/front/index.html`);
->>>>>>> 92463aafe36899ad3cceb9c76b9f413008241818
+
 });
 
 
@@ -40,11 +37,8 @@ router.post("/resetPassword", async (req, res) => {
     const { token, newPassword } = req.body;
     const result = await passwordService.resetPassword(token, newPassword);
     if (result.success) {
-<<<<<<< HEAD
-        res.send({ message: result.message, redirectUrl: "https://final-front-mva2.onrender.com/pages/login.html" });
-=======
-        res.send({ message: result.message, redirectUrl: "http://127.0.0.1:5500/front/pages/login.html" });
->>>>>>> 92463aafe36899ad3cceb9c76b9f413008241818
+        res.send({ message: result.message, redirectUrl: "https://final-front-mva2.onrender.com/index.html" });
+
     } else {
         res.status(400).send(result.message);
     }
