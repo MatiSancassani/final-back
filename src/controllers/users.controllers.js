@@ -40,7 +40,7 @@ class PasswordService {
             const token = tokenEmail({ _id });
             http://127.0.0.1:5500/front/pages/index.html
             // this.sendResetEmail(user.email, `http://localhost:8030/resetPassword?token=${token}`);
-            this.sendResetEmail(user.email, `http://127.0.0.1:5500/front/pages/resetPassword.html?token=${token}`);
+            this.sendResetEmail(user.email, `https://final-front-mva2.onrender.com/front/pages/resetPassword.html?token=${token}`);
 
             return 'Password reset email sent';
         } catch (err) {

@@ -11,7 +11,7 @@ const config = {
     // la propiedad UPLOAD_DIR en base al valor de otra propiedad (DIRNAME)
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
     get UPLOAD_DIR() { return path.join(this.DIRNAME, 'public', 'uploads'); }, // Función getter\
-    SERVER_UPLOAD_PATH: 'http://localhost:8030/static/uploads',
+    SERVER_UPLOAD_PATH: 'https://final-back-o0ty.onrender.com/static/uploads',
     MONGODB_URI: ('mongodb+srv://matisancassani:mati123@cluster0.lcblgku.mongodb.net/ecommerce'),
     // MONGODB_URI: ('mongodb+srv://matisancassani:M5i03s98@cluster0.lcblgku.mongodb.net/(nombre de la base de datos)')
     //
