@@ -17,7 +17,7 @@ router.get("/github/callback", passport.authenticate("github", { session: false 
     console.log(user)
     // Aquí es donde se maneja el JWT y se devuelve al cliente
     res.cookie("token", req.user.token, { httpOnly: true, secure: true, sameSite: 'None' });
-    res.redirect(`https://final-front-mva2.onrender.com/pages/products.html`);
+    res.redirect(`https://final-front-mva2.onrender.com/pages/products.html?cart_id=${cart_id}`);
 
 });
 

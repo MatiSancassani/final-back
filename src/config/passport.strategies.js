@@ -29,7 +29,7 @@ passport.use('github', new gitHubStrategy(
                     githubId: profile.id,
                     name: profile.displayName || profile.username,
                     email: profile.emails[0].value,
-                    password: 'asd', // Sin contraseña porque el login es con GitHub
+                    password: '.$', // Sin contraseña porque el login es con GitHub
                     rol: 'user',
                     cart_id: cart._id, // Crea un carrito 
                 };
