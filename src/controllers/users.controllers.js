@@ -38,7 +38,7 @@ class PasswordService {
 
             const { _id } = user;
             const token = tokenEmail({ _id });
-            this.sendResetEmail(user.email, `https://final-front-mva2.onrender.com/front/pages/resetPassword.html?token=${token}`);
+            this.sendResetEmail(user.email, `https://final-front-mva2.onrender.com/pages/resetPassword.html?token=${token}`);
 
 
             return 'Password reset email sent';
